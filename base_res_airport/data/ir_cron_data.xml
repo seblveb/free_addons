@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record model="ir.cron" forcecreate="True" id="res_airport_update_scheduler">
+            <field name="name">Airports: Update Airports</field>
+            <field name="model_id" ref="base_res_airport.model_res_airport"/>
+            <field name="state">code</field>
+            <field name="code">model.cron_fetch_airports_data()</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">2</field>
+            <field name="interval_type">weeks</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+        </record>
+    </data>
+</odoo>

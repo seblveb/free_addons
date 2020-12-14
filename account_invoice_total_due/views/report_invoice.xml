@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <template id="report_invoice_document_with_payment_multi_currency"
+                  inherit_id="account.report_invoice_document">
+            <xpath expr="//div[@class='clearfix']" position="after">
+                <t t-if="o.type == 'out_invoice'">
+                <br/>
+                <br/>
+                <div class="clearfix">
+                    <div id="total" class="row">
+                        <div t-attf-class="#{'col-6' if report_type != 'html' else 'col-sm-7 col-md-6'} ml-auto">
+                            <table class="table table-sm" style="page-break-inside: avoid;">
+                                <tr class="border-black o_subtotal" style="">
+                                    <td>
+                                        <strong>Invoices Total Due</strong>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-esc="sum(request.env['account.move'].search([('partner_id', '=', o.partner_id.id)]).mapped('amount_residual_signed'))"
+                                              t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                </t>
+            </xpath>
+        </template>
+    </data>
+</odoo>

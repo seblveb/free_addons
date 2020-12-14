@@ -1,0 +1,55 @@
+<odoo>
+    <data>
+        <record id="res_airport_view_form" model="ir.ui.view">
+            <field name="name">res.airport.view.form</field>
+            <field name="model">res.airport</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="icao"/>
+                                <field name="iata"/>
+                                <field name="city"/>
+                                <field name="country_id"/>
+                            </group>
+                            <group>
+                                <field name="elevation"/>
+                                <field name="lat"/>
+                                <field name="lon"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="res_airport_view_tree" model="ir.ui.view">
+            <field name="name">res.airport.view.tree</field>
+            <field name="model">res.airport</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="icao"/>
+                    <field name="iata"/>
+                    <field name="country_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="res_airport_action" model="ir.actions.act_window">
+            <field name="name">Airports</field>
+            <field name="res_model">res.airport</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="res_airport_menu"
+                  name="Airports"
+                  action="res_airport_action"
+                  sequence="20"
+                  groups="base.group_user"
+                  parent="base.menu_users"
+                />
+    </data>
+</odoo>
