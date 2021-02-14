@@ -42,7 +42,7 @@ odoo.define('project_stage_image.KanbanColumn', function (require) {
 
                             // create the image and give it
                             // the correct source
-                            var img = $(`<img id='stage-image-${projectTaskTypeId}' alt=${projectTaskTypeId} src=${src} height="140" width="240">`);
+                            var img = $(`<img id='stage-image-${projectTaskTypeId}' alt=${projectTaskTypeId} src=${src} height="120" width="240">`);
 
                             // append the image into the template
                             $(`[data-id=${projectTaskTypeId}]`)[0].firstElementChild.append(img[0])
