@@ -16,7 +16,7 @@ odoo.define('project_stage_image.KanbanColumn', function (require) {
 
             // make sure that the stage
             // is not folded
-            if ((!this.folded) && (this.modelName == 'project.task.type')) {
+            if ((!this.folded) && (this.modelName == 'project.task')) {
 
                 // current url, <domain_name>:<port_number>
                 var url = window.location.origin;
