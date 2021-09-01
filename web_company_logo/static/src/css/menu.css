@@ -1,4 +1,12 @@
-#company-logo {
-    height: 46px;
-    width: 46px;
+@media screen and (orientation: portrait) {
+    #company-logo {
+        height: 46px;
+        width: 46px;
+    }
 }
+@media screen and (orientation: landscape) {
+       #company-logo {
+                height: 46px;
+                width: 100%;
+        }
+}    
